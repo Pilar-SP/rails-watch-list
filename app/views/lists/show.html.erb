@@ -1,8 +1,8 @@
 <div class="position-relative">
-  <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)) %>)">
+  <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('list_background.jpg') %>)">
     <h1><%= @list.name %></h1>
   </div>
-    <span class="movie-tag"><%= pluralize(@list.movies.size, 'movie') %></span>
+  <span class="movie-tag"><%= pluralize(@list.movies.size, "movie") %></span>
 </div>
 <div class="container mb-5">
   <div class="d-flex justify-content-between my-4">
@@ -37,6 +37,11 @@
   <hr class="my-5">
   <div class="row">
     <div class="col-12 col-sm-6">
+      <h3>Reviews</h3>
+      <% if @list.reviews.empty? %>
+        <small><em class="text-muted">Be the first one to review this list</em></small>
+      <% end %>
+      <% @list.reviews.each do |review| %>
         <div>
           <% review.rating.times do %>
             <i class="fas fa-star star-yellow"></i>
@@ -52,7 +57,7 @@
         <h5>Add your review</h5>
         <%= simple_form_for [@list, @review] do |f| %>
           <%= f.input :comment, placeholder: "Add your review here..." %>
-          <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { data: { controller: "jquery-bar-rating" } } %>
+          <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { data: { controller: "star-rating" } } %>
           <%= f.submit class:"btn btn-flat" %>
         <% end %>
       </div>
