@@ -1,0 +1,8 @@
+<p>hello from lists#index</p>
+
+<% @lists.each do |list| %>
+  <p><%= list.name %></p>
+<% end %>
+
+
+<%= link_to "create a new list", lists_new_path(@list) %>
