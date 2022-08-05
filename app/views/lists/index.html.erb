@@ -1,26 +1,35 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%# <div class="navbar--container"> %>
-    <%= image_tag("popcorn.png", class: "navbar--img")%>
-    <div class="d-flex ">
-      <%# <p>My lists</p> %>
-      <button type="button" class="btn btn-outline-primary border border-0 rounded-4 ">My lists</button>
-      <button type="button" class="btn btn-outline-primary border border-0 rounded-4 mx-2">New list</button>
-      <%# <p>New list</p> %>
-    </div>
-  <%# </div> %>
+
+  <%= image_tag("popcorn.png", class: "navbar--img")%>
+  <div class="d-flex ">
+    <%# <p>My lists</p> %>
+    <button type="button" class="btn btn-outline-dark rounded-2 ">My lists</button>
+    <button type="button" class="btn btn-outline-dark rounded-2 mx-2">New list</button>
+
+  </div>
+
 </div>
 
 <div class="banner">
   <h1>Save any kind of movies</h1>
+  <h5>For those days of Netflix and chill</h5>
+</div>
+
+<div class=container--btn>
+  <%= link_to new_list_path(@list) do %>
+    <button type="button" class="btn btn-outline-dark rounded-2 mx-4">Create a movie list</button>
+  <% end %>
+
+  <h2>My lists</h2>
 </div>
 
 
-
-
-<% @lists.each do |list| %>
-  <%= link_to list.name, list_path(list) %>
-<% end %>
-
-
-
-<%= link_to "Create a movie list", new_list_path(@list) %>
+<div class="list-card-container">
+  <% @lists.each do |list| %>
+    <%= link_to list_path(list) do %>
+      <div class="list-card">
+        <h3><%= list.name %></h3>
+      </div>
+    <% end %>
+  <% end %>
+</div>

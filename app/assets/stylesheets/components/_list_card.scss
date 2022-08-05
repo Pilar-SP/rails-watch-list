@@ -1,0 +1,37 @@
+.list-card {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("card.jpg");
+  background-size: cover;
+  background-position: center;
+  // width: 400px;
+  height: 130px;
+  border-radius: 4px;
+  text-align: center;
+  // margin: 10px 10px;
+}
+
+.list-card h3{
+  color: white;
+  font-weight:bolder;
+  text-shadow: 2px 2px #0b0b0b;
+  padding-top: 50px;
+}
+
+a{
+  text-decoration: none !important;
+}
+
+.list-card-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 18px;
+  margin: 15px 130px;
+}
+
+.container--btn{
+  margin: 20px 130px;
+}
+
+.container--btn > a {
+  margin-left: 1100px;
+  // float: right;
+}
