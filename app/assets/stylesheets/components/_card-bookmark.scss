@@ -35,6 +35,23 @@
   // font-style: bolder;
   // font-size: 12px;
   margin-bottom: 20px;
+}
 
+.danger-button > a {
+  text-decoration: none;
+  color: red;
 
+}
+
+.danger-button > a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.img-muted {
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  margin-bottom: 6px;
 }
