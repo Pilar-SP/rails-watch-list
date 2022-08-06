@@ -1,0 +1,11 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= image_tag("popcorn.png", class: "navbar--img")%>
+  <div class="d-flex ">
+    <%= link_to lists_path(@list) do %>
+      <button type="button" class="btn btn-outline-dark rounded-2 ">My lists</button>
+    <% end %>
+    <%= link_to new_list_path(@list) do %>
+      <button type="button" class="btn btn-outline-dark rounded-2 mx-2">New list</button>
+    <% end %>
+  </div>
+</div>

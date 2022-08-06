@@ -1,0 +1,40 @@
+.card-movie{
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  // width: 800px;
+}
+
+.card-movie > img {
+  // height: 200px;
+  // width: 100%;
+  // object-fit: cover;
+}
+
+.container-bookmark {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+}
+
+.card--movie--content {
+  padding: 15px;
+  // padding-right: 60px;
+}
+
+.card--movie--content > p {
+  font-style: italic;
+  font-size: 12px;
+  // padding-top: 25px;
+}
+.card--movie--content > h3 {
+  // font-style: bolder;
+  // font-size: 12px;
+  margin-bottom: 20px;
+
+
+}

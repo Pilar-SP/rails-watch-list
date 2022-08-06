@@ -1,28 +1,50 @@
-<h1><%= @list.name %></h1>
+<div class="container my-5">
 
-<% @list.bookmarks.each do |bookmark| %>
-  <%= bookmark.comment %>
-  <%= link_to "Delete",
-    bookmark_path(bookmark),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %>
-  <hr>
+  <h1 class="text-center"><%= @list.name %></h1>
 
-<% end %>
+  <%# <div class="container--btn">
+    <%= link_to "Add a movie", new_list_bookmark_path(@list) %>
+  <%# </div> %>
 
-<% @list.movies.each do |movie| %>
-  <%= image_tag(movie.poster_url, size: "100x200") %>
-  <%= movie.title %>
-  <%= movie.overview %>
-  <hr>
-<% end %>
+  <div class=container--btn>
+    <%= link_to new_list_bookmark_path(@list) do %>
+      <button type="button" class="btn btn-outline-dark rounded-2">Add a movie</button>
+    <% end %>
+  </div>
 
 
+  <div class="container-bookmark">
+
+    <% @list.movies.each do |movie| %>
+      <div class="card-movie">
+        <%= image_tag(movie.poster_url, size: "160x260") %>
+        <div class="card--movie--content">
+          <h3 class="text-center"><%= movie.title %></h3>
+          <p><%= movie.overview %></p>
+        </div>
+      </div>
+    <% end %>
+
+        <% @list.bookmarks.each do |bookmark| %>
+          <%= bookmark.comment %>
+          <%= link_to "Delete",
+            bookmark_path(bookmark),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+          %>
+        <% end %>
+
+      <%# </div> %>
+
+  </div>
+
+</div>
 
 
 
 
 
 
-<%= link_to "Add a movie", new_list_bookmark_path(@list)%>
-<%= link_to "Back to Lists", lists_path %>
+
+
+
+<%# <%= link_to "Back to Lists", lists_path %>
