@@ -1,5 +1,9 @@
 <div class="container my-5">
+  <br>
   <h1 class="text-center"><%= @list.name %></h1>
+
+  <span class="badge rounded-pill text-bg-primary py-3 px-4"><strong><%= @list.movies.all.count %> movies</strong></span>
+  <%# <br> %>
   <div class=container--btn>
     <%= link_to new_list_bookmark_path(@list) do %>
       <button type="button" class="btn btn-outline-dark rounded-2">Add a movie</button>

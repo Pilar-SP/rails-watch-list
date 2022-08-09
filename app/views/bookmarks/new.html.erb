@@ -1,6 +1,8 @@
-
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment %>
-  <%= f.association :movie, as: :select %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container mx-auto" style="width: 400px;">
+<br>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :comment %>
+    <%= f.association :movie, as: :select %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
