@@ -1,15 +1,20 @@
 <div class="banner">
-  <h1 id="element">Save any kind of movies</h1>
+  <h1 style="color: white"><span data-controller="typed-js"></span>
+    <%# <p>hello</p> %>
+      <%# <h1>Save any kind of movies</h1> %>
 
-  <h5>For those days of Netflix and chill</h5>
+  </h1>
+  <%# <h5>For those days of Netflix and chill</h5> %>
+
 </div>
 
-<div class=container--btn>
+<%# <div class=container--btn float-end mx-2 my-2> %>
+  <h2 class="text-center my-4">My lists</h2>
+<div class="float-end mx-4 my-2 ">
   <%= link_to new_list_path(@list) do %>
-    <button type="button" class="btn btn-outline-dark rounded-2 mx-4">Create a movie list</button>
+    <button type="button" class="btn btn-outline-dark rounded-2">Create a movie list</button>
   <% end %>
 
-  <h2>My lists</h2>
 </div>
 
 
