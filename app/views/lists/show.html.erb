@@ -23,7 +23,7 @@
           <h3 class="text-center"><%= movie.title %></h3>
           <p><%= movie.overview %></p>
           <div class="d-flex justify-content-between">
-            <div class="text-break">
+            <div class="text-break" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis">
               <i class="fas fa-quote-left me-2"></i><small><%= bookmark.comment =%></small><i class="fas fa-quote-right ms-2"></i>
             </div>
             <div class="danger-button border-0 mx-3">
