@@ -22,8 +22,10 @@
         <div class="card--movie--content">
           <h3 class="text-center"><%= movie.title %></h3>
           <p><%= movie.overview %></p>
-          <div class="d-flex">
-            <i class="fas fa-quote-left me-2"></i><small class="flex-grow-1"><%= bookmark.comment %></small>
+          <div class="d-flex justify-content-between">
+            <div class="text-break">
+              <i class="fas fa-quote-left me-2"></i><small><%= bookmark.comment =%></small><i class="fas fa-quote-right ms-2"></i>
+            </div>
             <div class="danger-button border-0 mx-3">
               <%= link_to "Delete",
                 bookmark_path(bookmark),
