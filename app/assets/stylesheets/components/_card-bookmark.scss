@@ -39,13 +39,14 @@
 
 .danger-button > a {
   text-decoration: none;
-  color: red;
+  color: rgb(252, 100, 100);
 
 }
 
-.danger-button > a:hover {
+.danger-button a:hover {
   text-decoration: none;
-  color: white;
+  color: rgb(255, 4, 4);
+
 }
 
 .img-muted {

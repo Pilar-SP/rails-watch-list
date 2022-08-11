@@ -5,7 +5,7 @@
   <span><strong><%= @list.movies.all.count %> movies</strong></span>
   <div class="float-end">
     <%= link_to new_list_bookmark_path(@list) do %>
-      <button type="button" class="btn btn-outline-dark rounded-2">Add a movie</button>
+      <button type="button" class="btn btn-outline-dark rounded-2 ">Add a movie</button>
     <% end %>
   </div>
   <% if @list.movies.empty? %>
@@ -14,7 +14,7 @@
     <% end %>
 
 
-  <div class="container-bookmark my-4 mx-4">
+  <div class="container-bookmark my-5 mx-4">
     <% @list.movies.each do |movie| %>
       <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
       <div class="card-movie">
@@ -23,7 +23,7 @@
           <h3 class="text-center"><%= movie.title %></h3>
           <p><%= movie.overview %></p>
           <i class="fas fa-quote-left me-2"></i><small class="flex-grow-1"><%= bookmark.comment %></small>
-          <div class="btn btn-outline-danger danger-button border-0 position-absolute bottom-0 end-0 mx-2">
+          <div class="danger-button border-0 position-absolute bottom-0 end-0 mx-3">
             <%= link_to "Delete",
               bookmark_path(bookmark),
               data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
