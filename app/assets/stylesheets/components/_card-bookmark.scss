@@ -2,28 +2,32 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
+  // display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
   // width: 800px;
+
 }
 
 .card-movie > img {
   // height: 200px;
-  // width: 100%;
-  // object-fit: cover;
+  width: 100%;
+  object-fit: cover;
 }
 
 .container-bookmark {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 40px;
 }
 
 .card--movie--content {
-  padding: 15px;
+  padding: 20px;
   // padding-right: 60px;
+  // width: 200px;
+  // height: 300px;
+
 }
 
 .card--movie--content > p {
@@ -34,7 +38,7 @@
 .card--movie--content > h3 {
   // font-style: bolder;
   // font-size: 12px;
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
 }
 
 .danger-button > a {
@@ -46,6 +50,7 @@
 .danger-button a:hover {
   text-decoration: none;
   color: rgb(255, 4, 4);
+  font-weight: 600;
 
 }
 
