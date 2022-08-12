@@ -1,0 +1,11 @@
+development:
+  cloud_name: "dnukiyiax"
+  api_key: "916156712862556"
+  api_secret: "UxGmZqtGpc5TtpJJ8beC5ho8f0k"
+  secure: true
+
+production:
+  cloud_name: "dnukiyiax"
+  api_key: "916156712862556"
+  api_secret: "UxGmZqtGpc5TtpJJ8beC5ho8f0k"
+  secure: true
