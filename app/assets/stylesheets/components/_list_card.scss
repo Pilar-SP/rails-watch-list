@@ -13,9 +13,9 @@
   // margin: 10px 10px;
 }
 
-.list-card:hover {
-  transform: scale(1.2);
-}
+// .list-card:hover {
+//   transform: scale(1.2);
+// }
 
 .list-card h3{
   color: white;
@@ -31,7 +31,7 @@ a{
 .list-card-container{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 18px;
+  grid-gap: 25px;
   margin: 15px 130px;
 }
 

@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import TypedJsController from "./typed_js_controller"
 application.register("typed-js", TypedJsController)
+
+import AosController from "./aos_controller"
+application.register("aos", AosController)

@@ -12,7 +12,9 @@
 <div class="list-card-container my-5">
   <% @lists.each do |list| %>
     <%= link_to list_path(list) do %>
-      <div class="list-card" style="background-image: url(
+
+
+      <div class="list-card" data-controller="aos" data-aos="zoom-out-up" style="background-image: url(
         <% if list.photo.key.present? %>
           <%= cl_image_path list.photo.key %>
         <% else %>
@@ -21,6 +23,8 @@
         );">
         <h3><%= list.name %></h3>
       </div>
+
+
     <% end %>
   <% end %>
 </div>
