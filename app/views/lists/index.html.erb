@@ -16,7 +16,7 @@
         <% if list.photo.key.present? %>
           <%= cl_image_path list.photo.key %>
         <% else %>
-          <%= '/assets/card.jpg' %>
+          <%= image_url("card.jpg") %>
         <% end %>
         );">
         <h3><%= list.name %></h3>
