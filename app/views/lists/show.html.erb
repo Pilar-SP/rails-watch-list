@@ -11,7 +11,13 @@
   <% else %>
 
     <div class="banner position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-    url('<%= cl_image_path @list.photo.key%>')">
+    url(
+        <% if @list.photo.key.present? %>
+          <%= cl_image_path @list.photo.key %>
+        <% else %>
+          <%= image_url("card.jpg") %>
+        <% end %>
+      )">
       <span class="badge text-bg-primary p-2 position-absolute top-0 start-0" style="border-radius: 4px;"><strong><%= @list.movies.all.count %> movies</strong></span>
 
       <h1 class="text-center"><%= @list.name %></h1>
