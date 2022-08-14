@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: :show
+  before_action :set_list, only: [:show]
 
   def index
     @lists = List.all
@@ -22,6 +22,7 @@ class ListsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
 
   private
 

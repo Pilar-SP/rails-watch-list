@@ -1,4 +1,4 @@
-<div class="banner">
+<div class="banner" style="background-image: url(<%= '/assets/cinema.jpg' %>);">
   <h1 style="color: white"><span data-controller="typed-js"></span></h1>
 </div>
 
@@ -11,7 +11,7 @@
 <div class="list-card-container">
   <% @lists.each do |list| %>
     <%= link_to list_path(list) do %>
-      <div class="list-card">
+      <div class="list-card" style="background-image: url('<%= cl_image_path list.photo.key%>');">
         <h3><%= list.name %></h3>
       </div>
     <% end %>

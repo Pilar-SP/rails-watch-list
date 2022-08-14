@@ -1,6 +1,5 @@
 <div class="container my-5">
   <br>
-  <h1 class="text-center"><%= @list.name %></h1>
 
   <span><strong><%= @list.movies.all.count %> movies</strong></span>
   <div class="float-end">
@@ -8,44 +7,42 @@
       <button type="button" class="btn btn-outline-dark rounded-2 ">Add a movie</button>
     <% end %>
   </div>
+
   <% if @list.movies.empty? %>
     <%= image_tag(("box.png"), class: "img-muted") %>
-      <h2 class="text-center">You have not saved any movies yet!</h2>
-    <% end %>
+    <h2 class="text-center">You have not saved any movies yet!</h2>
+  <% else %>
 
-
-  <div class="container-bookmark my-5 mx-4">
-    <% @list.movies.each do |movie| %>
-      <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
-      <div class="card-movie">
-        <%= image_tag(movie.poster_url, size: "300x200") %>
-        <div class="card--movie--content">
-          <h3 class="text-center"><%= movie.title %></h3>
-          <p><%= movie.overview %></p>
-          <div class="d-flex justify-content-between">
-            <div class="text-break" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis">
-              <i class="fas fa-quote-left me-2"></i><small><%= bookmark.comment =%></small><i class="fas fa-quote-right ms-2"></i>
-            </div>
-            <div class="danger-button border-0 mx-3">
-              <%= link_to "Delete",
-                bookmark_path(bookmark),
-                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-              %>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    url('<%= cl_image_path @list.photo.key%>')">
+      <h1 class="text-center"><%= @list.name %></h1>
+    </div>
+    <div class="container-bookmark my-5 mx-4">
+      <% @list.movies.each do |movie| %>
+        <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+        <div class="card-movie">
+          <%= image_tag(movie.poster_url, size: "300x200") %>
+          <div class="card--movie--content">
+            <h3 class="text-center"><%= movie.title %></h3>
+            <p><%= movie.overview %></p>
+            <div class="d-flex justify-content-between">
+              <div class="text-break" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis">
+                <i class="fas fa-quote-left me-2"></i><small><%= bookmark.comment =%></small><i class="fas fa-quote-right ms-2"></i>
+              </div>
+              <div class="danger-button border-0 mx-3">
+                <%= link_to "Delete",
+                  bookmark_path(bookmark),
+                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+                %>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+
+  <% end %>
+
+
+
 </div>
-
-
-
-
-
-
-
-
-
-<%= cl_image_tag(@list.photo.key, width: 400, height: 300, crop: :fill) %>
-<div></div>
