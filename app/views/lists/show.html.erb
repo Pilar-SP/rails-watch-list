@@ -1,22 +1,29 @@
 <div class="container my-5">
-  <br>
-
-  <span><strong><%= @list.movies.all.count %> movies</strong></span>
-  <div class="float-end">
-    <%= link_to new_list_bookmark_path(@list) do %>
-      <button type="button" class="btn btn-outline-dark rounded-2 ">Add a movie</button>
-    <% end %>
-  </div>
 
   <% if @list.movies.empty? %>
     <%= image_tag(("box.png"), class: "img-muted") %>
     <h2 class="text-center">You have not saved any movies yet!</h2>
+    <%= link_to new_list_bookmark_path(@list) do %>
+      <div class="text-center my-5">
+        <button type="button" class="btn btn-outline-dark">Add a movie</button>
+      </div>
+    <% end %>
   <% else %>
 
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    <div class="banner position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
     url('<%= cl_image_path @list.photo.key%>')">
+      <span class="badge text-bg-primary p-2 position-absolute top-0 start-0" style="border-radius: 4px;"><strong><%= @list.movies.all.count %> movies</strong></span>
+
       <h1 class="text-center"><%= @list.name %></h1>
     </div>
+
+    <div class="float-end ">
+      <%= link_to new_list_bookmark_path(@list) do %>
+        <button type="button" class="btn btn-outline-dark rounded-2 m-3">Add a movie</button>
+      <% end %>
+    </div>
+
+    <%# <br> %>
     <div class="container-bookmark my-5 mx-4">
       <% @list.movies.each do |movie| %>
         <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>

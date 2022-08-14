@@ -11,7 +11,13 @@
 <div class="list-card-container">
   <% @lists.each do |list| %>
     <%= link_to list_path(list) do %>
-      <div class="list-card" style="background-image: url('<%= cl_image_path list.photo.key%>');">
+      <div class="list-card" style="background-image: url(
+        <% if list.photo.key.present? %>
+          <%= cl_image_path list.photo.key %>
+        <% else %>
+          <%= '/assets/card.jpg' %>
+        <% end %>
+        );">
         <h3><%= list.name %></h3>
       </div>
     <% end %>
