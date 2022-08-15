@@ -37,3 +37,5 @@
 
 # Ignore API key
 /Rails.env
+
+/config/initializers
