@@ -2,12 +2,11 @@
 
   <% if @list.movies.empty? %>
     <%= image_tag(("box.png"), class: "img-muted") %>
-    <h2 class="text-center">You have not saved any movies yet!</h2>
-    <%= link_to new_list_bookmark_path(@list) do %>
-      <div class="text-center my-3">
-        <button type="button" class="btn btn-outline-dark">Add a movie</button>
-      </div>
-    <% end %>
+    <div class="text-center">
+      <h2>You have not saved any movies yet!</h2>
+      <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-outline-dark d-inline-block my-3" %>
+    </div>
+
   <% else %>
 
     <div class="banner position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
@@ -23,13 +22,11 @@
       <h1 class="text-center"><%= @list.name %></h1>
     </div>
     <br>
-    <br>
+    <%# <br> %>
 
-    <div class="float-end ">
-      <%= link_to new_list_bookmark_path(@list) do %>
-        <button type="button" class="btn btn-outline-dark rounded-2 m-3">Add a movie</button>
-      <% end %>
-    </div>
+    <%= link_to "Delete list", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Delete #{@list.name} list?" }, class: "btn btn-outline-danger m-2" %>
+
+    <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-outline-dark m-2 float-end" %>
 
     <br>
     <div class="container-bookmark my-5 mx-4">

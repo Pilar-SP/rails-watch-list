@@ -3,9 +3,8 @@
   <h1 style="color: white"><span data-controller="typed-js"></span></h1>
 </div>
 
-<%= link_to new_list_path(@list) do %>
-  <button type="button" class="btn btn-outline-dark rounded-2 float-end my-4 me-4">Create a movie list</button>
-<% end %>
+<%= link_to "Create a movie list", new_list_path(@list), class: "btn btn-outline-dark rounded-2 float-end my-4 me-4" %>
+
 
 <h2 class="text-center my-5 mx-5">🎬 My lists</h2>
 
