@@ -65,6 +65,11 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@orchidjs/sifter@^0.9.2":
+  "integrity" "sha512-9XGiAJcWvEektxjR9X+dYeG+kg8GdojM6ZCmrnuDaWoVew+GAKxiesvYxyY+RLUgWTv8B1qpLIVYlswxKcW5XQ=="
+  "resolved" "https://registry.npmjs.org/@orchidjs/sifter/-/sifter-0.9.3.tgz"
+  "version" "0.9.3"
+
 "@popperjs/core@^2.11.5":
   "integrity" "sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw=="
   "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.11.5.tgz"
@@ -858,6 +863,13 @@
     "acorn" "^8.5.0"
     "commander" "^2.20.0"
     "source-map-support" "~0.5.20"
+
+"tom-select@^2.1.0":
+  "integrity" "sha512-NtE8kACBlMv4QaDakYfnXtEAgM/AVmM7Hw5FNQmij0uwgRgyXC/2kpNJPD1AdT5q/l6mUNkTnInQpTmrwX/tWQ=="
+  "resolved" "https://registry.npmjs.org/tom-select/-/tom-select-2.1.0.tgz"
+  "version" "2.1.0"
+  dependencies:
+    "@orchidjs/sifter" "^0.9.2"
 
 "typed.js@^2.0.12":
   "integrity" "sha512-lyACZh1cu+vpfYY3DG/bvsGLXXbdoDDpWxmqta10IQUdMXisMXOEyl+jos+YT9uBbzK4QaKYBjT3R0kTJO0Slw=="

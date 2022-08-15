@@ -12,3 +12,6 @@ application.register("typed-js", TypedJsController)
 
 import AosController from "./aos_controller"
 application.register("aos", AosController)
+
+import TomSelectController from "./tom_select_controller"
+application.register("tom-select", TomSelectController)
