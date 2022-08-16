@@ -28,6 +28,9 @@ class ListsController < ApplicationController
     redirect_to lists_path, status: :see_other
   end
 
+  def home
+  end
+
   private
 
   def set_list

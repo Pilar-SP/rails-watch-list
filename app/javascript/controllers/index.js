@@ -15,3 +15,6 @@ application.register("aos", AosController)
 
 import TomSelectController from "./tom_select_controller"
 application.register("tom-select", TomSelectController)
+
+import FadeController from "./fade_controller"
+application.register("fade", FadeController)

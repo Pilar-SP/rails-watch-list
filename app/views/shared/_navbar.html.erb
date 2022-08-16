@@ -1,11 +1,13 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= image_tag("popcorn.png", class: "navbar--img")%>
   <div class="d-flex ">
-    <%= link_to lists_path(@list) do %>
-      <button type="button" class="btn btn-outline-dark rounded-2 ">My lists</button>
-    <% end %>
-    <%= link_to new_list_path(@list) do %>
-      <button type="button" class="btn btn-outline-dark rounded-2 mx-2">New list</button>
-    <% end %>
+    <%= link_to "My lists", lists_path(@list), class: "btn btn-outline-dark rounded-2"  %>
+      <%# <button type="button" class="btn btn-outline-dark rounded-2">My lists</button> %>
+    <%# <% end %>
+    <%= link_to "New list", new_list_path(@list), class: "btn btn-outline-dark rounded-2 mx-2" %>
+      <%# <button type="button" class="btn btn-outline-dark rounded-2 mx-2">New list</button> %>
+    <%# <% end %>
+    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-outline-dark"  if user_signed_in? %>
+
   </div>
 </div>
