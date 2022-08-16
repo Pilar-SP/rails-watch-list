@@ -1,0 +1,41 @@
+<%# <h1>HOMEPAGE</h1> %>
+<div class="video-wrapper"></div>
+  <%= video_tag "video-2.mp4", autoplay: true, muted: true, loop: true, class: "background-video" %>
+</div>
+<div class="title-wrapper text-center" id="body" style="opacity: 0;" data-controller="fade-controller">
+  <h1>Never miss a movie</h1>
+  <p>Your site for listing those good flicks</p>
+
+
+  <%= link_to "Get me started", new_user_session_path, class: "button btn btn-primary p-2" %>
+
+
+</div>
+<%# <% if user_signed_in? %>
+  <%# <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-primary" %>
+<%# <% else %>
+  <%# <%= link_to "Log in", new_user_session_path, class: "btn btn-primary" %>
+<%# <% end %>
+
+
+    <script type="text/javascript">
+        var opacity = 0;
+        var intervalID = 0;
+        window.onload = fadeIn;
+
+        function fadeIn() {
+            setInterval(show, 200);
+        }
+
+        function show() {
+            var body = document.getElementById("body");
+            opacity = Number(window.getComputedStyle(body)
+                             .getPropertyValue("opacity"));
+            if (opacity < 1) {
+                opacity = opacity + 0.1;
+                body.style.opacity = opacity
+            } else {
+                clearInterval(intervalID);
+            }
+        }
+    </script>
