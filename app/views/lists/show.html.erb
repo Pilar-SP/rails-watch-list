@@ -28,7 +28,25 @@
 
     <%= link_to "Delete list", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Delete #{@list.name} list?" }, class: "btn btn-outline-danger m-2" %>
 
-    <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-outline-dark m-2 float-end" %>
+    <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-outline-dark m-2 float-end",
+        data: {'bs-toggle':"collapse", 'bs-target':"#collapseExample"}, 'aria-expanded':"false", 'aria-controls':"collapseExample" %>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+      </div>
+    </div>
+
+
+
+    <%# <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Button
+    </button>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+      </div>
+    </div> %>
+
 
     <br>
     <div class="container-bookmark my-5 mx-4">
