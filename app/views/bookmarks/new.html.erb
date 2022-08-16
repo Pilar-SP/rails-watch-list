@@ -1,9 +1,13 @@
-<%= render "shared/form" do %>
-  <h3 class="text-center">Create a new movie</h3>
-  <%= simple_form_for [@list, @bookmark] do |f| %>
-    <%= f.input :comment %>
-    <%# <%= f.association :movie, as: :select, input_html: { "data-controller" => "tom-select" } %>
-    <%= f.association :movie, prompt: "Select a movie", input_html: { data: { controller: 'tom-select' } } %>
-    <%= f.button :submit %>
+<%# <div class="collapse" id="hello" role="button"> %>
+
+  <%= render "shared/form" do %>
+    <h3 class="text-center">Create a new movie</h3>
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= f.input :comment %>
+      <%# <%= f.association :movie, as: :select, input_html: { "data-controller" => "tom-select" } %>
+      <%= f.association :movie, prompt: "Select a movie", input_html: { data: { controller: 'tom-select' } } %>
+      <%= f.button :submit %>
+    <% end %>
   <% end %>
-<% end %>
+
+<%# </div> %>
