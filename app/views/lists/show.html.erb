@@ -6,12 +6,15 @@
     <div class="text-center">
 
       <h2>You have not saved any movies yet!</h2>
-      <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-outline-dark d-inline-block my-3" %>
-    </div>
+      <button type="button" class="btn btn-outline-dark my-4 mx-5" data-bs-toggle="modal" data-bs-target="#moviesModal">
+      Add a movie
+      </button>
+
+      <%= render "shared/movie_modal" %>    </div>
 
   <% else %>
 
-    <div class="banner position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    <div class="banner position-relative" style="padding: 160px 0; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
     url(
         <% if @list.photo.key.present? %>
           <%= cl_image_path @list.photo.key %>
@@ -26,7 +29,13 @@
     <%# <br> %>
     <%# <br> %>
 
-    <%= link_to "Delete list", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Delete #{@list.name} list?" }, class: "btn btn-outline-danger my-4 mx-5" %>
+    <%= link_to "Delete list", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Delete #{@list.name} list?" },
+     class: "btn btn-outline-danger my-4 mx-5" %>
+
+    <%# <%= link_to "Delete list", list_path(@list), data: { turbo_method: :delete, turbo_frame: "delete_modal" },
+    class: "btn btn-outline-danger my-4 mx-5" %>
+
+
 
     <button type="button" class="btn btn-outline-dark my-4 mx-5 float-end" data-bs-toggle="modal" data-bs-target="#moviesModal">
     Add a movie
