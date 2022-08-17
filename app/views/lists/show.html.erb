@@ -1,7 +1,7 @@
 <div class="container my-5">
 
   <% if @list.movies.empty? %>
-    <%= link_to "Delete list", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Delete #{@list.name} list?" }, class: "btn btn-outline-danger my-3" %>
+    <%= link_to "Delete list", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Delete #{@list.name} list?" }, class: "btn btn-outline-danger my-3" if policy(@list).destroy? %>
     <%= image_tag(("box.png"), class: "img-muted") %>
     <div class="text-center">
 
@@ -30,7 +30,7 @@
     <%# <br> %>
 
     <%= link_to "Delete list", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Delete #{@list.name} list?" },
-     class: "btn btn-outline-danger my-4 mx-5" %>
+     class: "btn btn-outline-danger my-4 mx-5" if policy(@list).destroy? %>
 
     <%# <%= link_to "Delete list", list_path(@list), data: { turbo_method: :delete, turbo_frame: "delete_modal" },
     class: "btn btn-outline-danger my-4 mx-5" %>
@@ -59,10 +59,8 @@
                 <i class="fas fa-quote-left me-2"></i><small><%= bookmark.comment =%></small><i class="fas fa-quote-right ms-2"></i>
               </div>
               <div class="danger-button border-0 mx-3">
-                <%= link_to "Delete",
-                  bookmark_path(bookmark),
-                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-                %>
+                <%= link_to "Delete", bookmark_path(bookmark),
+                  data: {turbo_method: :delete, turbo_confirm: "Delete this film?"} if policy(@list).destroy? %>
               </div>
             </div>
           </div>

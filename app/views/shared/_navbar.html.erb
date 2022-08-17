@@ -7,7 +7,9 @@
     <%= link_to "New list", new_list_path(@list), class: "btn btn-outline-dark rounded-2 mx-2" %>
       <%# <button type="button" class="btn btn-outline-dark rounded-2 mx-2">New list</button> %>
     <%# <% end %>
-    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-outline-dark"  if user_signed_in? %>
+    <% if user_signed_in? %>
+      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-outline-dark" %>
+    <% end %>
 
   </div>
 </div>
