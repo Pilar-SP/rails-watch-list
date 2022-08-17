@@ -33,6 +33,7 @@ gem "simple_form", github: "heartcombo/simple_form"
 gem "dotenv-rails"
 gem "cloudinary"
 gem "devise"
+gem "pundit"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

@@ -5,12 +5,18 @@ class BookmarksController < ApplicationController
   def new
     @bookmark = Bookmark.new
     # @list = List.find(params[:list_id])
+    authorize @bookmark
   end
+
+
 
   def create
     @bookmark = Bookmark.new(bookmark_params)
     @bookmark.list = @list
-
+    # @bookmark.list.user = current_user
+    # raise
+    authorize @bookmark
+    # raise
     if @bookmark.save
       redirect_to list_path(@list)
     else
@@ -19,6 +25,7 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
+    authorize @bookmark
     @bookmark.destroy
     redirect_to list_path(@bookmark.list), status: :see_other
   end
