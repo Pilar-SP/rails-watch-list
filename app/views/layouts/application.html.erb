@@ -16,7 +16,7 @@
     <p class="alert"><%= alert %></p>
     <%= render "shared/flashes" %>
     <%= render "shared/navbar" if user_signed_in? %>
-    <%= render "shared/container_app" %>
+    <%= render "shared/container_app" if user_signed_in? %>
     <%= yield %>
 
 
