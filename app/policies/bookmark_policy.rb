@@ -12,12 +12,12 @@ class BookmarkPolicy < ApplicationPolicy
 
   def show?
     true
-    record.user == user
+    # record.user == user
   end
 
   def create?
-    # true
-    record.user == user
+    true
+    # record.user == user
     # true
   end
 
