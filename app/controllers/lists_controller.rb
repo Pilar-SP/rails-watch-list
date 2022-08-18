@@ -9,7 +9,8 @@ class ListsController < ApplicationController
   def show
     @bookmark = Bookmark.new
     # authorize @list
-    authorize @bookmark
+    # authorize @bookmark
+    authorize @list
 
   end
 

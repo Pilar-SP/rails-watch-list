@@ -13,7 +13,6 @@ class ListPolicy < ApplicationPolicy
 
   def show?
     record.user == user
-    # true
   end
 
   def create?
