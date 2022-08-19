@@ -1,7 +1,8 @@
 .background-movies {
   // padding: 79px 0;
   overflow: hidden;
-  height: 705px;
+  // height: 705px;
+  min-height: 100vh;
   background-size: cover;
   background-repeat: cover;
   background-position: center;
